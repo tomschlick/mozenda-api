@@ -1,0 +1,147 @@
+===========================
+// Configuring Your Library
+===========================
+
+$config_array = array('output_format' => 'json', 'api_key' => 'MY-SUPER-SECRET-KEY');
+$this->mozenda_api->config($config_array);
+
+===========================
+// Collection.GetList
+===========================
+
+Returns a list of collections for an account
+
+1.$data = $this->mozenda_api->collection_get_list();
+
+
+===========================
+// Collection.GetViews
+===========================
+
+Gets a list of views for a particular collection
+
+1.$data = $this->mozenda_api->collection_get_views($collection_id);
+
+===========================
+// Collection.GetFields
+===========================
+
+Returns a list of fields that are in that collection with their details
+
+1.$data = $this->mozenda_api->collection_get_fields($collection_id);
+
+===========================
+// Collection.AddItem
+===========================
+
+Adds an item to a collection with the values specified.
+
+1.$items = array('Username' => 'John', 'Phone_Number' => '555-0123');
+2. 
+3.$data = $this->mozenda_api->collection_add_item($collection_id, $items);
+
+===========================
+// Collection.UpdateItem
+===========================
+
+Updates an item in the collection.
+
+1.$items = array('Username' => 'Peter', 'Phone_Number' => '555-9876');
+2. 
+3.$data = $this->mozenda_api->collection_update_item($collection_id, $item_id, $items);
+
+===========================
+// Collection.DeleteItem
+===========================
+
+Deletes an item from a collection.
+
+1.$data = $this->mozenda_api->collection_delete_item($collection_id, $item_id);
+
+===========================
+// Collection.Clear
+===========================
+
+Clears the contents of a collection but leaves the collection intact.
+
+1.$data = $this->mozenda_api->collection_clear($collection_id);
+
+===========================
+// Collection.Delete
+===========================
+
+Deletes the collection and all data within it.
+
+1.$data = $this->mozenda_api->collection_delete($collection_id);
+
+===========================
+// View.GetItems
+===========================
+
+Returns items from a view.
+
+1.$data = $this->mozenda_api->view_get_items($view_id);
+
+===========================
+// Agent.GetList
+===========================
+
+Returns a list of your agents with their ID, Name, Settings, Description, and other important information.
+
+1.$data = $this->mozenda_api->agent_get_list();
+
+===========================
+// Agent.GetJobs
+===========================
+
+Returns a list of your agent’s jobs with detailed information.
+
+1.$data = $this->mozenda_api->agent_get_jobs($agent_id);
+
+===========================
+// Agent.Run
+===========================
+
+Starts or resumes the Agent.
+
+1.$data = $this->mozenda_api->agent_run($agent_id);
+
+===========================
+// Agent.Delete
+===========================
+
+Deletes an agent and all associated schedules for that agent.
+
+1.$data = $this->mozenda_api->agent_delete($agent_id)
+
+===========================
+// Job.Get
+===========================
+
+Gets the details of a job by the Job ID.
+
+1.$data = $this->mozenda_api->job_get($job_id);
+
+===========================
+// Job.Cancel
+===========================
+
+Cancels a Job in the system. Note, a job must be in a Paused or Error State to cancel a job.
+
+1.$data = $this->mozenda_api->job_cancel($job_id);
+
+===========================
+// Job.Pause
+===========================
+
+Issues the ‘Pause’ command for a job currently running in the system.
+
+1.$data = $this->mozenda_api->job_pause($job_id);
+
+===========================
+// Job.Resume
+===========================
+
+Resumes a job that is in a Paused or Error state.
+
+1.$data = $this->mozenda_api->job_resume($job_id);
